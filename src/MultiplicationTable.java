@@ -91,35 +91,67 @@ public class MultiplicationTable {
 		
 
 		//2-6
+		//2-7
 		//반복적으로 발생하는 부분을 메소드를 활용해 반복되는 부분을 줄인다.
-		System.out.println("숫자 입력시 구구단 출력");
+//		System.out.println("숫자 입력시 구구단 출력");
+//		Scanner scanner = new Scanner(System.in);
+//		int input = scanner.nextInt();
+//		
+//		//입력한 숫자의 구구단값을 계산해서 저장.
+//		int[] val = Gugudan.calculate(input);
+//		
+//		//구구단 출력
+//		Gugudan.output(val);
+		
+		
+		//2-8 최종 요구사항 1
+		//ex) input 8 -> 8x8 까지
+		//    input 19-> 19x19 까지
+//		System.out.println("입력해라 휴먼 : ");
+//		Scanner scanner = new Scanner(System.in);
+//		int input = scanner.nextInt();
+//		GugudanUpgrade.Calculate(input);
+		
+		//2-8 최종 요구사항 2
+		//ex) "8,7"과 같은 문자열을 입력하면 팔칠단을 구현.
+		//    2*1 ... 2*7 ... 3*1 ... 3*7 ... 8*1 ... 8*7
+		System.out.println("입력하라 : ");
 		Scanner scanner = new Scanner(System.in);
-		int input = scanner.nextInt();
+		String input = scanner.next();
+
+		if (input.indexOf(",") == -1) {
+			System.out.println("입력 제대로 안하냐");
+		}else {
+			String[] splited = input.split(",");
 		
-		//입력한 숫자의 구구단값을 계산해서 저장.
-		int[] val = calculate(input);
-		
-		//구구단 출력
-		output(val);
+			int first = Integer.parseInt(splited[0]);
+			int second= Integer.parseInt(splited[1]);
+			
+			for(int i=2; i<=first; i++) {
+				for(int k=1; k<=second; k++) {
+					System.out.println(i+"X"+k+" = "+i*k);
+				}
+			}
+		}
 	}
 	
 	//2-6
 	//보내준 숫자의 구구단을 만든 다음 리턴
-	public static int[] calculate(int stage) {
-		int[] loop = new int[9];
-
-		for (int i=0; i<loop.length; i++) {
-			loop[i] = stage * (1);
-		}
-		
-		return loop;
-	}
+//	public static int[] calculate(int stage) {
+//		int[] loop = new int[9];
+//
+//		for (int i=0; i<loop.length; i++) {
+//			loop[i] = stage * (1);
+//		}
+//		
+//		return loop;
+//	}
 
 	//2-6
 	//배열 데이터 받아서 출력
-	public static void output(int[] num) {
-		for (int i=0; i<num.length; i++) {
-			System.out.println(num[i]);
-		}
-	}
+//	public static void output(int[] num) {
+//		for (int i=0; i<num.length; i++) {
+//			System.out.println(num[i]);
+//		}
+//	}
 }
